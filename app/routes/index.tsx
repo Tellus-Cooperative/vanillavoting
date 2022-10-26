@@ -1,3 +1,5 @@
+import { Link } from '@remix-run/react';
+
 export default function Index() {
 	return (
 		<div className="flex flex-col mx-auto min-h-screen items-center">
@@ -59,7 +61,7 @@ export default function Index() {
 							type="button"
 							className="relative z-10 px-10 py-2 font-mono text-3xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopGreen tracking-wide hover:bg-telluscoopRed hover:-rotate-3"
 						>
-							<a href="#">VOTE!</a>
+							<Link to="/proposals">VOTE!</Link>
 						</button>
 					</div>
 				</div>
