@@ -4,18 +4,26 @@ export default function Index() {
 			<nav className="container p-6">
 				<div className="flex items-center justify-end">
 					<div className="flex space-x-8">
-						<a href="#" className="font-mono text-xl font-bold">
-							home
-						</a>
-						<a href="#" className="font-mono text-xl font-bold">
-							community
-						</a>
-						<a href="#" className="font-mono text-xl font-bold">
-							docs
-						</a>
-						<a href="#" className="font-mono text-xl font-bold">
-							blog
-						</a>
+						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
+							<a href="#" className="font-mono text-xl font-bold">
+								home
+							</a>
+						</div>
+						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
+							<a href="#" className="font-mono text-xl font-bold">
+								community
+							</a>
+						</div>
+						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
+							<a href="#" className="font-mono text-xl font-bold">
+								docs
+							</a>
+						</div>
+						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
+							<a href="#" className="font-mono text-xl font-bold">
+								blog
+							</a>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -45,27 +53,43 @@ export default function Index() {
 					<p className="font-mono text-2xl">economies together.</p>
 				</div>
 				<div className="mb-20">
-					<a
-						href="#"
-						className="px-10 py-2 font-mono text-3xl border-4 border-black text-telluscoopWhite bg-telluscoopGreen hover:bg-telluscoopRed tracking-wide"
-					>
-						VOTE!
-					</a>
+					<div className="inline-block relative">
+						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1"></span>
+						<button
+							type="button"
+							className="relative z-10 px-10 py-2 font-mono text-3xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopGreen tracking-wide hover:bg-telluscoopRed hover:-rotate-3"
+						>
+							<a href="#">VOTE!</a>
+						</button>
+					</div>
 				</div>
 				<div className="flex items-center justify-evenly min-w-full">
-					<div className="flex flex-col items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopBlue">
-						<p className="font-mono text-xl tracking-wide font-medium">COOP</p>
-						<p className="font-mono text-xl tracking-wide font-medium">Token</p>
+					<div className="inline-block relative">
+						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full -mt-24"></span>
+						<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopBlue">
+							<p className="font-mono text-xl tracking-wide font-medium">
+								COOP
+							</p>
+							<p className="font-mono text-xl tracking-wide font-medium">
+								Token
+							</p>
+						</div>
 					</div>
-					<div className="flex flex-col items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full bg-telluscoopYellow">
-						<p className="font-mono text-xl tracking-wide font-medium">
-							Mission
-						</p>
+					<div className="inline-block relative">
+						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full"></span>
+						<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full bg-telluscoopYellow">
+							<p className="font-mono text-xl tracking-wide font-medium">
+								Mission
+							</p>
+						</div>
 					</div>
-					<div className="flex flex-col items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopPink">
-						<p className="font-mono text-xl tracking-wide font-medium">
-							Roadmap
-						</p>
+					<div className="inline-block relative">
+						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full -mt-24"></span>
+						<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopPink">
+							<p className="font-mono text-xl tracking-wide font-medium">
+								Roadmap
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
