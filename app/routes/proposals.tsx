@@ -1,6 +1,14 @@
+import { LoaderFunction } from '@remix-run/node';
 import { Outlet } from '@remix-run/react';
+import albedo from '@albedo-link/intent';
 
 export default function Proposals() {
+	const checkAlbedo = async () => {
+		const pubKey = await albedo.publicKey({});
+
+		console.log(pubKey);
+	};
+
 	return (
 		<div className="flex flex-col mx-auto min-h-screen">
 			<nav className="flex items-center justify-between p-10">
@@ -46,8 +54,9 @@ export default function Proposals() {
 					<button
 						type="button"
 						className="relative z-10 px-10 py-2 font-mono text-2xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopRed tracking-wide hover:bg-telluscoopGreen"
+						onClick={checkAlbedo}
 					>
-						<a href="#">Connect Wallet</a>
+						Connect Wallet
 					</button>
 				</div>
 			</nav>
