@@ -1,12 +1,23 @@
-import { LoaderFunction } from '@remix-run/node';
-import { Outlet } from '@remix-run/react';
+import { ActionFunction } from '@remix-run/node';
+import { Outlet, useSubmit } from '@remix-run/react';
 import albedo from '@albedo-link/intent';
+import { createUserSession } from '~/utils/session.server';
+
+export const action: ActionFunction = async ({ request, params }) => {
+	const body = await request.formData();
+	const sessionKey: any = body.get('pubkey');
+
+	return createUserSession(sessionKey, '/proposals');
+};
 
 export default function Proposals() {
+	const submit = useSubmit();
 	const checkAlbedo = async () => {
 		const pubKey = await albedo.publicKey({});
+		const formData = new FormData();
 
-		console.log(pubKey);
+		formData.set('pubkey', pubKey.pubkey);
+		submit(formData, { method: 'post' });
 	};
 
 	return (

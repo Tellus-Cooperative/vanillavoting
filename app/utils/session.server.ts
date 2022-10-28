@@ -31,5 +31,7 @@ export async function getUser(request: Request) {
 	const pubKey = session.get('pubkey');
 	if (!pubKey || typeof pubKey !== 'string') {
 		return null;
+	} else {
+		return pubKey;
 	}
 }
