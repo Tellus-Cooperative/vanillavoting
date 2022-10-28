@@ -15,6 +15,7 @@ const storage = createCookieSessionStorage({
 export async function createUserSession(pubKey: string, redirectTo: string) {
 	const session = await storage.getSession();
 	session.set('pubkey', pubKey);
+
 	return redirect(redirectTo, {
 		headers: {
 			'Set-Cookie': await storage.commitSession(session),
@@ -34,4 +35,14 @@ export async function getUser(request: Request) {
 	} else {
 		return pubKey;
 	}
+}
+
+export async function logout(request: Request) {
+	const session = await storage.getSession(request.headers.get('Cookie'));
+
+	return redirect('/proposals', {
+		headers: {
+			'Set-Cookie': await storage.destroySession(session),
+		},
+	});
 }
