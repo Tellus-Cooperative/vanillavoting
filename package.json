@@ -14,6 +14,7 @@
 		"@remix-run/react": "^1.7.3",
 		"@remix-run/serve": "^1.7.3",
 		"isbot": "^3.5.4",
+		"mongoose": "^6.7.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},

@@ -20,6 +20,9 @@ module.exports = {
 				telluscoopBlue: '#5AA9E6',
 				telluscoopGreen: '#71C666',
 				telluscoopDark: '#22333F',
+				telluscoopLightGreen: '#E3F4E0',
+				telluscoopLightRed: '#F8D3D2',
+				telluscoopLightGray: '#EFF3F9',
 			},
 			fontFamily: {
 				roboto: ["'Roboto Mono'", "'monospace'"],

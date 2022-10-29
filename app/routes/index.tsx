@@ -8,22 +8,22 @@ export default function Index() {
 					<div className="flex space-x-8">
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a href="#" className="font-mono text-xl font-bold">
-								home
+								Home
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a href="#" className="font-mono text-xl font-bold">
-								community
+								Community
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a href="#" className="font-mono text-xl font-bold">
-								docs
+								Docs
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a href="#" className="font-mono text-xl font-bold">
-								blog
+								Blog
 							</a>
 						</div>
 					</div>
@@ -54,17 +54,17 @@ export default function Index() {
 					</p>
 					<p className="font-mono text-2xl">economies together.</p>
 				</div>
-				<div className="mb-20">
+				<Link to="/proposals" className="mb-20">
 					<div className="inline-block relative">
 						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1"></span>
 						<button
 							type="button"
 							className="relative z-10 px-10 py-2 font-mono text-3xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopGreen tracking-wide hover:bg-telluscoopRed hover:-rotate-3"
 						>
-							<Link to="/proposals">VOTE!</Link>
+							VOTE!
 						</button>
 					</div>
-				</div>
+				</Link>
 				<div className="flex items-center justify-evenly min-w-full">
 					<div className="inline-block relative">
 						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full -mt-24"></span>
