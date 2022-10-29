@@ -1,5 +1,5 @@
 import { ActionFunction, LoaderFunction } from '@remix-run/node';
-import { Outlet, useSubmit, useLoaderData } from '@remix-run/react';
+import { Outlet, useSubmit, useLoaderData, Link } from '@remix-run/react';
 import albedo from '@albedo-link/intent';
 import { createUserSession, getUser, logout } from '~/utils/session.server';
 
@@ -88,7 +88,10 @@ export default function Proposals() {
 				</div>
 				<div className="flex min-w-[25%] justify-between items-center">
 					{userKey && (
-						<div className="flex flex-col items-center mr-10">
+						<Link
+							to="/proposals/user"
+							className="flex flex-col items-center mr-10"
+						>
 							<img
 								className="max-w-[4rem]"
 								src="/assets/user-logo.png"
@@ -97,7 +100,7 @@ export default function Proposals() {
 							<span className="font-mono text-md mt-2">
 								{userKey.slice(0, 4) + '...' + userKey.slice(-4)}
 							</span>
-						</div>
+						</Link>
 					)}
 					<div>
 						<div className="inline-block relative">
