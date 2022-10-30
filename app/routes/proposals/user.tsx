@@ -22,8 +22,8 @@ export default function User() {
 				Back
 			</Link>
 			<div className="flex items-center mb-5">
-				<h1 className="font-flex text-4xl mr-5">My Account</h1>{' '}
-				<span className="font-flex text-sm pt-2">
+				<h1 className="font-flex text-4xl mr-5">My Account</h1>
+				<span className="font-flex text-sm pt-1">
 					{userKey.slice(0, 4) + '...' + userKey.slice(-4)}
 				</span>
 			</div>
@@ -32,7 +32,7 @@ export default function User() {
 					<div className="mb-8">
 						<h3 className="inline-block font-flex text-base font-bold mr-2">
 							Account Balance
-						</h3>{' '}
+						</h3>
 						<span className="inline-block font-flex text-base">~ 4000 USD</span>
 					</div>
 					<h4 className="font-flex text-base mb-2">XLM: 100000 ~ 100 USD</h4>

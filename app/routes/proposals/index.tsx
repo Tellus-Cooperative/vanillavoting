@@ -1,5 +1,5 @@
 import { LoaderFunction } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData, Link } from '@remix-run/react';
 import { prisma } from '~/utils/prisma.server';
 
 export const loader: LoaderFunction = async () => {
@@ -62,15 +62,17 @@ export default function ProposalsIndex() {
 											<span className="font-flex text-xs font-bold">50%</span>
 										</div>
 										<div className="flex flex-col items-center justify-between pt-1">
-											<div className="inline-block relative">
-												<span className="absolute inset-0 z-0 bg-black translate-x-0.5 translate-y-0.5 rounded"></span>
-												<button
-													type="button"
-													className="relative z-10 px-8 py-1 font-mono text-2xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopGreen tracking-wide rounded hover:bg-telluscoopPink"
-												>
-													VOTE
-												</button>
-											</div>
+											<Link to={item.id}>
+												<div className="inline-block relative">
+													<span className="absolute inset-0 z-0 bg-black translate-x-0.5 translate-y-0.5 rounded"></span>
+													<button
+														type="button"
+														className="relative z-10 px-8 py-1 font-mono text-2xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopGreen tracking-wide rounded hover:bg-telluscoopPink"
+													>
+														VOTE
+													</button>
+												</div>
+											</Link>
 											<div className="w-full mt-3 relative h-3 mb-0.5">
 												<div className="bg-neutral-500 absolute top-0 left-0 h-3 w-full rounded border-2 border-black"></div>
 												<div className="bg-telluscoopYellow absolute top-0 left-0 h-3 w-[50%] rounded border-2 border-black"></div>
