@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model proposals {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  abstract    String
+  address     String
+  body        String
+  description String
+  endDate     DateTime @db.Date
+  link        String
+  minVotes    Int
+  proposal    String
+  startDate   DateTime @db.Date
+  tag         String
+}

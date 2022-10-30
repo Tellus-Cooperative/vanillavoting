@@ -1,29 +1,9 @@
 import { LoaderFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import mongoose from 'mongoose';
-
-mongoose.connect(process.env.MONGO as string, { dbName: 'tellus-app' });
-
-const ProposalSchema = new mongoose.Schema(
-	{
-		proposal: String,
-		description: String,
-		startDate: Date,
-		abstract: String,
-		address: String,
-		body: String,
-		endDate: Date,
-		link: String,
-		minVotes: Number,
-	},
-	{ collection: 'proposals' }
-);
-
-const ProposalModel: any =
-	mongoose.models['Proposal'] || mongoose.model('Proposal', ProposalSchema);
+import { prisma } from '~/utils/prisma.server';
 
 export const loader: LoaderFunction = async () => {
-	const data = await ProposalModel.find({});
+	const data = await prisma.proposals.findMany();
 
 	return { data };
 };
@@ -54,7 +34,7 @@ export default function ProposalsIndex() {
 					<tbody>
 						{data.map((item: any) => (
 							<tr
-								key={item._id}
+								key={item.id}
 								className={
 									item.tag === 'active'
 										? 'bg-telluscoopLightGreen'
