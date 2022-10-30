@@ -23,7 +23,9 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function Proposals() {
+	const { userKey } = useLoaderData();
 	const submit = useSubmit();
+
 	const checkAlbedo = async () => {
 		const pubKey = await albedo.publicKey({});
 		const formData = new FormData();
@@ -36,15 +38,13 @@ export default function Proposals() {
 		submit(null, { method: 'post' });
 	};
 
-	function disconnectText(e: any) {
+	const disconnectText = (e: any) => {
 		e.target.innerText = 'Disconnect';
-	}
+	};
 
-	function originalText(e: any) {
+	const originalText = (e: any) => {
 		e.target.innerText = 'Connected';
-	}
-
-	const { userKey } = useLoaderData();
+	};
 
 	return (
 		<div className="flex flex-col mx-auto min-h-screen">
