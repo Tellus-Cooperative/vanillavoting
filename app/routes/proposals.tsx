@@ -65,22 +65,34 @@ export default function Proposals() {
 					</div>
 					<div className="flex justify-between mt-5">
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://telluscoop.com"
+								className="font-mono text-xl font-bold"
+							>
 								home
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://community.telluscoop.com"
+								className="font-mono text-xl font-bold"
+							>
 								community
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://docs.telluscoop.com"
+								className="font-mono text-xl font-bold"
+							>
 								docs
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://medium.com/telluscoop"
+								className="font-mono text-xl font-bold"
+							>
 								blog
 							</a>
 						</div>

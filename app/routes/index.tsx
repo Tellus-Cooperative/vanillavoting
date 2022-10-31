@@ -7,22 +7,34 @@ export default function Index() {
 				<div className="flex items-center justify-end">
 					<div className="flex space-x-8">
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://telluscoop.com"
+								className="font-mono text-xl font-bold"
+							>
 								Home
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://community.telluscoop.com"
+								className="font-mono text-xl font-bold"
+							>
 								Community
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://docs.telluscoop.com"
+								className="font-mono text-xl font-bold"
+							>
 								Docs
 							</a>
 						</div>
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
-							<a href="#" className="font-mono text-xl font-bold">
+							<a
+								href="https://medium.com/telluscoop"
+								className="font-mono text-xl font-bold"
+							>
 								Blog
 							</a>
 						</div>
@@ -66,33 +78,39 @@ export default function Index() {
 					</div>
 				</Link>
 				<div className="flex items-center justify-evenly min-w-full">
-					<div className="inline-block relative">
-						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full -mt-24"></span>
-						<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopBlue">
-							<p className="font-mono text-xl tracking-wide font-medium">
-								COOP
-							</p>
-							<p className="font-mono text-xl tracking-wide font-medium">
-								Token
-							</p>
+					<a href="https://telluscoop.notion.site/telluscoop/Tellus-Cooperative-e18dbf7508694847b69d862a5920d6e8">
+						<div className="inline-block relative">
+							<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full -mt-24"></span>
+							<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopBlue">
+								<p className="font-mono text-xl tracking-wide font-medium">
+									COOP
+								</p>
+								<p className="font-mono text-xl tracking-wide font-medium">
+									Token
+								</p>
+							</div>
 						</div>
-					</div>
-					<div className="inline-block relative">
-						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full"></span>
-						<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full bg-telluscoopYellow">
-							<p className="font-mono text-xl tracking-wide font-medium">
-								Mission
-							</p>
+					</a>
+					<a href="https://telluscoop.notion.site/telluscoop/Tellus-Cooperative-e18dbf7508694847b69d862a5920d6e8">
+						<div className="inline-block relative">
+							<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full"></span>
+							<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full bg-telluscoopYellow">
+								<p className="font-mono text-xl tracking-wide font-medium">
+									Mission
+								</p>
+							</div>
 						</div>
-					</div>
-					<div className="inline-block relative">
-						<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full -mt-24"></span>
-						<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopPink">
-							<p className="font-mono text-xl tracking-wide font-medium">
-								Roadmap
-							</p>
+					</a>
+					<a href="https://telluscoop.notion.site/telluscoop/Tellus-Cooperative-e18dbf7508694847b69d862a5920d6e8">
+						<div className="inline-block relative">
+							<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full -mt-24"></span>
+							<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full -mt-24 bg-telluscoopPink">
+								<p className="font-mono text-xl tracking-wide font-medium">
+									Roadmap
+								</p>
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 			</section>
 		</div>

@@ -89,7 +89,7 @@ export default function ProposalsIndex() {
 									<div className="flex flex-col w-[70%]">
 										<div className="flex items-center mb-2">
 											<h2 className="font-flex text-xl font-bold tracking-wide mr-5">
-												Proposal {'#' + item.proposal.slice(-3)}
+												{item.proposal}
 											</h2>
 											<span className="font-flex text-sm italic tracking-wide">
 												{dates[index] > 1

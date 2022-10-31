@@ -64,16 +64,18 @@ export default function Proposals() {
 		asset_issuer: string;
 		network: string;
 		submit: boolean;
+		memo: string;
 	};
 
 	const voteYes = async () => {
 		const txData: TxData = {
-			amount: '500',
+			amount: '100',
 			destination: 'GALB22EZFMEDXZSK7QD4NGFFSRMV434ZSQL2O6KOY7YTYADYYUSJLDWE',
 			asset_code: 'COOP',
 			asset_issuer: 'GBE2GUDSJCZW5GGXDS3V3VQV3SEIN67UR6Z64P2CETVJ2O2CPGBRIVF3',
 			network: 'testnet',
 			submit: true,
+			memo: 'YES',
 		};
 		const tx = await albedo.pay(txData);
 		window.location.reload();
@@ -81,12 +83,13 @@ export default function Proposals() {
 
 	const voteNo = async () => {
 		const txData: TxData = {
-			amount: '500',
+			amount: '100',
 			destination: 'GDSXBUMPPPK54KZI2TQ3OY5DLBT6YDUFWR5RZTAZB3CU6PCJNSVPRXQQ',
 			asset_code: 'COOP',
 			asset_issuer: 'GBE2GUDSJCZW5GGXDS3V3VQV3SEIN67UR6Z64P2CETVJ2O2CPGBRIVF3',
 			network: 'testnet',
 			submit: true,
+			memo: 'NO',
 		};
 		const tx = await albedo.pay(txData);
 		window.location.reload();
@@ -99,7 +102,9 @@ export default function Proposals() {
 			</Link>
 			<div className="flex items-center justify-between mb-2">
 				<div className="flex items-center mb-3">
-					<h1 className="font-flex text-4xl mr-5">Selected {data.proposal}</h1>
+					<h1 className="font-flex text-4xl mr-5">
+						Community Governance Proposal {data.proposal.slice(-3)}
+					</h1>
 					<span className="font-flex text-sm">
 						{dateEnd.toLocaleDateString('en-US', {
 							year: 'numeric',
