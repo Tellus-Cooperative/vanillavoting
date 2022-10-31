@@ -2,6 +2,7 @@ import { redirect, LoaderFunction } from '@remix-run/node';
 import { useLoaderData, Link } from '@remix-run/react';
 import { prisma } from '~/utils/prisma.server';
 import { getUser } from '~/utils/session.server';
+import albedo from '@albedo-link/intent';
 
 export const loader: LoaderFunction = async ({ request, params }) => {
 	const userKey = await getUser(request);
@@ -21,11 +22,11 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 		return redirect('/proposals');
 	}
 
-	return { data, coopYes, coopNo };
+	return { data, coopYes, coopNo, userKey };
 };
 
 export default function Proposals() {
-	const { data, coopYes, coopNo } = useLoaderData();
+	const { data, coopYes, coopNo, userKey } = useLoaderData();
 
 	const dateStart = new Date(data.startDate);
 	const dateEnd = new Date(data.endDate);
@@ -54,6 +55,41 @@ export default function Proposals() {
 	const percentageNo = (totalNo.balance / minVotes) * 100;
 	const percentageNoStyle = {
 		width: `${percentageNo}%`,
+	};
+
+	type TxData = {
+		amount: string;
+		destination: string;
+		asset_code: string;
+		asset_issuer: string;
+		network: string;
+		submit: boolean;
+	};
+
+	const voteYes = async () => {
+		const txData: TxData = {
+			amount: '500',
+			destination: 'GALB22EZFMEDXZSK7QD4NGFFSRMV434ZSQL2O6KOY7YTYADYYUSJLDWE',
+			asset_code: 'COOP',
+			asset_issuer: 'GBE2GUDSJCZW5GGXDS3V3VQV3SEIN67UR6Z64P2CETVJ2O2CPGBRIVF3',
+			network: 'testnet',
+			submit: true,
+		};
+		const tx = await albedo.pay(txData);
+		window.location.reload();
+	};
+
+	const voteNo = async () => {
+		const txData: TxData = {
+			amount: '500',
+			destination: 'GDSXBUMPPPK54KZI2TQ3OY5DLBT6YDUFWR5RZTAZB3CU6PCJNSVPRXQQ',
+			asset_code: 'COOP',
+			asset_issuer: 'GBE2GUDSJCZW5GGXDS3V3VQV3SEIN67UR6Z64P2CETVJ2O2CPGBRIVF3',
+			network: 'testnet',
+			submit: true,
+		};
+		const tx = await albedo.pay(txData);
+		window.location.reload();
 	};
 
 	return (
@@ -111,6 +147,7 @@ export default function Proposals() {
 									<button
 										type="button"
 										className="relative z-10 px-[1.8rem] py-0.5 font-mono text-lg border-4 border-black transition-all text-telluscoopWhite bg-telluscoopBlue tracking-wide rounded hover:bg-telluscoopGreen"
+										onClick={voteYes}
 									>
 										YES
 									</button>
@@ -136,6 +173,7 @@ export default function Proposals() {
 									<button
 										type="button"
 										className="relative z-10 px-[2.15rem] py-0.5 font-mono text-lg border-4 border-black transition-all text-telluscoopWhite bg-telluscoopPink tracking-wide rounded hover:bg-telluscoopGreen"
+										onClick={voteNo}
 									>
 										NO
 									</button>
