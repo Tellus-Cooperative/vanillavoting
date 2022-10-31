@@ -6,12 +6,20 @@ import { getUser } from '~/utils/session.server';
 export const loader: LoaderFunction = async ({ request }) => {
 	const data = await prisma.proposals.findMany();
 	const userKey = await getUser(request);
+	const stellarYes = await fetch(
+		'https://horizon-testnet.stellar.org/accounts/GALB22EZFMEDXZSK7QD4NGFFSRMV434ZSQL2O6KOY7YTYADYYUSJLDWE'
+	);
+	const coopYes = await stellarYes.json();
+	const stellarNo = await fetch(
+		'https://horizon-testnet.stellar.org/accounts/GDSXBUMPPPK54KZI2TQ3OY5DLBT6YDUFWR5RZTAZB3CU6PCJNSVPRXQQ'
+	);
+	const coopNo = await stellarNo.json();
 
-	return { data, userKey };
+	return { data, userKey, coopYes, coopNo };
 };
 
 export default function ProposalsIndex() {
-	const { data, userKey } = useLoaderData();
+	const { data, userKey, coopYes, coopNo } = useLoaderData();
 
 	const today: any = new Date();
 
@@ -28,6 +36,22 @@ export default function ProposalsIndex() {
 
 		return dayDifference(today, dateEnd);
 	});
+
+	const totalYes = coopYes.balances.find(
+		(item: any) => item.asset_code === 'COOP'
+	);
+
+	const totalNo = coopNo.balances.find(
+		(item: any) => item.asset_code === 'COOP'
+	);
+
+	const totalVotes = Math.trunc(totalYes.balance) + Math.trunc(totalNo.balance);
+	const minVotes = data[0].minVotes;
+
+	const percentage = (totalVotes / minVotes) * 100;
+	const percentageStyle = {
+		width: `${percentage}%`,
+	};
 
 	return (
 		<div className="flex-1 flex flex-col py-5 px-10">
@@ -79,7 +103,7 @@ export default function ProposalsIndex() {
 									</div>
 									<div className="flex">
 										<div className="flex items-end pr-2">
-											<span className="font-flex text-xs font-bold">50%</span>
+											<span className="font-flex text-xs font-bold">{`${percentage}%`}</span>
 										</div>
 										<div className="flex flex-col items-center justify-between pt-1">
 											{userKey ? (
@@ -110,7 +134,10 @@ export default function ProposalsIndex() {
 
 											<div className="w-full mt-3 relative h-3 mb-0.5">
 												<div className="bg-neutral-500 absolute top-0 left-0 h-3 w-full rounded border-2 border-black"></div>
-												<div className="bg-telluscoopYellow absolute top-0 left-0 h-3 w-[50%] rounded border-2 border-black"></div>
+												<div
+													className="bg-telluscoopYellow absolute top-0 left-0 h-3 rounded border-2 border-black"
+													style={percentageStyle}
+												></div>
 											</div>
 										</div>
 									</div>

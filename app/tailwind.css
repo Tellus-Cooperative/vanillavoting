@@ -738,10 +738,6 @@ video {
   max-height: 2.5rem;
 }
 
-.max-h-\[9rem\] {
-  max-height: 9rem;
-}
-
 .max-h-\[10rem\] {
   max-height: 10rem;
 }
@@ -788,6 +784,14 @@ video {
   width: 50%;
 }
 
+.w-\[1000\%\] {
+  width: 1000%;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
 .min-w-full {
   min-width: 100%;
 }
@@ -802,14 +806,6 @@ video {
 
 .max-w-\[4rem\] {
   max-width: 4rem;
-}
-
-.max-w-\[30\%\] {
-  max-width: 30%;
-}
-
-.max-w-\[50\%\] {
-  max-width: 50%;
 }
 
 .flex-1 {
@@ -922,12 +918,6 @@ video {
 
 .overflow-y-scroll {
   overflow-y: scroll;
-}
-
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .rounded-full {

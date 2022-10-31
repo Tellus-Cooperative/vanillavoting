@@ -5,12 +5,12 @@ import { getUser } from '~/utils/session.server';
 export const loader: LoaderFunction = async ({ request }) => {
 	const userKey = await getUser(request);
 	const stellarAccount = await fetch(
-		'https://horizon.stellar.org/accounts/GCTLGFMM2KFVGJDBVAWYCFK3P22MNG2O3MS6K6LCH5CLPW45TVCJSZU2' //+ userKey
+		'https://horizon-testnet.stellar.org/accounts/' + userKey
 	);
 	const stellarAccountData = await stellarAccount.json();
 	const stellarClaimable = await fetch(
-		'https://horizon.stellar.org/claimable_balances?claimant=GCTLGFMM2KFVGJDBVAWYCFK3P22MNG2O3MS6K6LCH5CLPW45TVCJSZU2'
-	); //+ userKey
+		'https://horizon-testnet.stellar.org/claimable_balances?claimant=' + userKey
+	);
 	const stellarClaimableData = await stellarClaimable.json();
 
 	if (!userKey) {

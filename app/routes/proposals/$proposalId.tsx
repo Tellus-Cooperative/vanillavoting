@@ -8,19 +8,53 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 	const data = await prisma.proposals.findUnique({
 		where: { id: params.proposalId },
 	});
+	const stellarYes = await fetch(
+		'https://horizon-testnet.stellar.org/accounts/GALB22EZFMEDXZSK7QD4NGFFSRMV434ZSQL2O6KOY7YTYADYYUSJLDWE'
+	);
+	const coopYes = await stellarYes.json();
+	const stellarNo = await fetch(
+		'https://horizon-testnet.stellar.org/accounts/GDSXBUMPPPK54KZI2TQ3OY5DLBT6YDUFWR5RZTAZB3CU6PCJNSVPRXQQ'
+	);
+	const coopNo = await stellarNo.json();
 
 	if (!userKey) {
 		return redirect('/proposals');
 	}
 
-	return { data };
+	return { data, coopYes, coopNo };
 };
 
 export default function Proposals() {
-	const { data } = useLoaderData();
+	const { data, coopYes, coopNo } = useLoaderData();
 
 	const dateStart = new Date(data.startDate);
 	const dateEnd = new Date(data.endDate);
+
+	const totalYes = coopYes.balances.find(
+		(item: any) => item.asset_code === 'COOP'
+	);
+
+	const totalNo = coopNo.balances.find(
+		(item: any) => item.asset_code === 'COOP'
+	);
+
+	const totalVotes = Math.trunc(totalYes.balance) + Math.trunc(totalNo.balance);
+	const minVotes = data.minVotes;
+
+	const percentageTotal = (totalVotes / minVotes) * 100;
+	const percentageTotalStyle = {
+		width: `${percentageTotal}%`,
+	};
+
+	const percentageYes = (totalYes.balance / minVotes) * 100;
+	const percentageYesStyle = {
+		width: `${percentageYes}%`,
+	};
+
+	const percentageNo = (totalNo.balance / minVotes) * 100;
+	const percentageNoStyle = {
+		width: `${percentageNo}%`,
+	};
 
 	return (
 		<div className="flex-1 flex flex-col py-5 px-10">
@@ -44,7 +78,10 @@ export default function Proposals() {
 					</span>
 					<div className="w-full mt-1 relative h-3">
 						<div className="bg-neutral-500 absolute top-0 left-0 h-3 w-full rounded border-2 border-black"></div>
-						<div className="bg-telluscoopYellow absolute top-0 left-0 h-3 w-[90%] rounded border-2 border-black"></div>
+						<div
+							className="bg-telluscoopYellow absolute top-0 left-0 h-3 rounded border-2 border-black"
+							style={percentageTotalStyle}
+						></div>
 					</div>
 				</div>
 			</div>
@@ -81,11 +118,14 @@ export default function Proposals() {
 							</div>
 							<div className="flex-1 flex flex-col items-end justify-center pl-2">
 								<span className="font-mono text-xs italic font-bold">
-									587M COOP 95.0%
+									{`${Math.trunc(totalYes.balance)} COOP ${percentageYes}%`}
 								</span>
 								<div className="w-full relative h-3 mb-4">
 									<div className="bg-neutral-500 absolute top-0 left-0 h-3 w-full rounded border-2 border-black"></div>
-									<div className="bg-telluscoopBlue absolute top-0 left-0 h-3 w-[95%] rounded border-2 border-black"></div>
+									<div
+										className="bg-telluscoopBlue absolute top-0 left-0 h-3 rounded border-2 border-black"
+										style={percentageYesStyle}
+									></div>
 								</div>
 							</div>
 						</div>
@@ -103,11 +143,14 @@ export default function Proposals() {
 							</div>
 							<div className="flex-1 flex flex-col items-end justify-center pl-2">
 								<span className="font-mono text-xs italic font-bold">
-									25M COOP 5.0%
+									{`${Math.trunc(totalNo.balance)} COOP ${percentageNo}%`}
 								</span>
 								<div className="w-full relative h-3 mb-4">
 									<div className="bg-neutral-500 absolute top-0 left-0 h-3 w-full rounded border-2 border-black"></div>
-									<div className="bg-telluscoopPink absolute top-0 left-0 h-3 w-[5%] rounded border-2 border-black"></div>
+									<div
+										className="bg-telluscoopPink absolute top-0 left-0 h-3 rounded border-2 border-black"
+										style={percentageNoStyle}
+									></div>
 								</div>
 							</div>
 						</div>
@@ -144,7 +187,7 @@ export default function Proposals() {
 						</a>
 						<a href={data.address}>
 							<h3 className="font-flex text-base font-bold mb-1 underline">
-								Snapshot
+								Address
 							</h3>
 						</a>
 					</div>
