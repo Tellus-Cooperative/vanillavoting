@@ -8,6 +8,7 @@ export const loader: LoaderFunction = async () => {
 		status: 200,
 		headers: {
 			'Content-type': 'text/plain',
+			'Access-Control-Allow-Origin': '*',
 		},
 	});
 };
