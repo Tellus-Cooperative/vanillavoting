@@ -1,8 +1,10 @@
 import { LoaderFunction } from '@remix-run/node';
-import * as fs from 'fs/promises';
+import { readFileSync } from 'fs';
+import path from 'path';
 
 export const loader: LoaderFunction = async () => {
-	const file = await fs.readFile('public/stellar.toml');
+	const link = path.join(process.cwd(), 'public', 'stellar.toml');
+	const file = readFileSync(link);
 
 	return new Response(file, {
 		status: 200,
