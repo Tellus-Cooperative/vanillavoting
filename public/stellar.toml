@@ -1,0 +1,25 @@
+VERSION="2.0.0"
+
+NETWORK_PASSPHRASE="Test SDF Network ; September 2015"
+HORIZON_URL="https://horizon-testnet.stellar.org"
+ACCOUNTS=[
+"GBE2GUDSJCZW5GGXDS3V3VQV3SEIN67UR6Z64P2CETVJ2O2CPGBRIVF3"
+"GDKKUSP33LKUIADG5IUJZIXCAXIVS745HHMLR27BCRI5OK6IY3XSXTYE"
+"GALB22EZFMEDXZSK7QD4NGFFSRMV434ZSQL2O6KOY7YTYADYYUSJLDWE"
+"GDSXBUMPPPK54KZI2TQ3OY5DLBT6YDUFWR5RZTAZB3CU6PCJNSVPRXQQ"
+]
+
+[DOCUMENTATION]
+ORG_NAME="Tellus Cooperative"
+ORG_URL="https://telluscoop.com/"
+ORG_GITHUB="tellus-cooperative"
+ORG_TWITTER="TellusCoop"
+
+[[PRINCIPALS]]
+name="Bastian Alexander Koh"
+email="alex@telluscoop.com"
+keybase="atl4st!"
+twitter="alexanderkoh"
+github="alexanderkoh"
+id_photo_hash="#"
+verification_photo_hash="#"
