@@ -55,11 +55,14 @@ export default function ProposalsIndex() {
 
 	return (
 		<div className="flex-1 flex flex-col py-5 px-10">
-			<h1 className="font-flex text-3xl mb-7">
-				<img className="inline-block max-h-10 mb-2" src="/assets/vote.png" />{' '}
+			<h1 className="font-flex text-2xl md:text-3xl mb-7">
+				<img
+					className="inline-block max-h-8 md:max-h-10 mb-2"
+					src="/assets/vote.png"
+				/>{' '}
 				Community Governance Proposals (CGP)
 			</h1>
-			<ul className="flex space-x-10 font-flex text-lg mb-3 pl-1">
+			<ul className="flex space-x-7 md:space-x-10 font-flex text-lg mb-3 pl-1">
 				<li className="text-telluscoopRed hover:cursor-pointer">All</li>
 				<li className="hover:text-telluscoopRed hover:cursor-pointer">
 					Active
@@ -85,8 +88,8 @@ export default function ProposalsIndex() {
 										: 'bg-telluscoopLightGray'
 								}
 							>
-								<td className="flex px-5 py-3 justify-between">
-									<div className="flex flex-col w-[70%]">
+								<td className="flex flex-col md:flex-row px-5 py-3 justify-between items-center md:items-stretch">
+									<div className="flex flex-col md:w-[70%] mb-8 md:mb-0">
 										<div className="flex items-center mb-2">
 											<h2 className="font-flex text-xl font-bold tracking-wide mr-5">
 												{item.proposal}
@@ -101,7 +104,7 @@ export default function ProposalsIndex() {
 											<p className="font-flex text-base">{item.description}</p>
 										</div>
 									</div>
-									<div className="flex">
+									<div className="flex pr-6 md:pr-0 mb-2 md:mb-0">
 										<div className="flex items-end pr-2">
 											<span className="font-flex text-xs font-bold">{`${percentage}%`}</span>
 										</div>

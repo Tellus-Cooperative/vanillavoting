@@ -44,13 +44,13 @@ export default function User() {
 				Back
 			</Link>
 			<div className="flex items-center mb-5">
-				<h1 className="font-flex text-4xl mr-5">My Account</h1>
-				<span className="font-flex text-sm pt-1">
+				<h1 className="font-flex text-3xl md:text-4xl mr-5">My Account</h1>
+				<span className="font-flex text-sm pt-2">
 					{userKey.slice(0, 4) + '...' + userKey.slice(-4)}
 				</span>
 			</div>
-			<div className="flex space-x-2 min-h-[50vh]">
-				<div className="basis-1/2 border-black border-[3px] rounded p-7 bg-neutral-300">
+			<div className="flex flex-col md:flex-row md:space-x-2 md:min-h-[50vh]">
+				<div className="basis-1/2 border-black border-[3px] rounded p-7 bg-neutral-300 mb-2 md:mb-0">
 					<div className="mb-8">
 						<h3 className="inline-block font-flex text-base font-bold mr-2">
 							Account Balance
@@ -80,11 +80,13 @@ export default function User() {
 					<h3 className="font-flex text-base font-bold mb-1">
 						Account Signers
 					</h3>
-					{signers.map((item: any) => (
-						<h4 key={item.key} className="font-flex text-base mb-2">
-							{item.key}
-						</h4>
-					))}
+					<div className="overflow-x-scroll md:overflow-visible">
+						{signers.map((item: any) => (
+							<h4 key={item.key} className="font-flex text-base mb-2">
+								{item.key}
+							</h4>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>

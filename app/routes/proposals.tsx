@@ -2,6 +2,7 @@ import { ActionFunction, LoaderFunction } from '@remix-run/node';
 import { Outlet, useSubmit, useLoaderData, Link } from '@remix-run/react';
 import albedo from '@albedo-link/intent';
 import { createUserSession, getUser, logout } from '~/utils/session.server';
+import Banner from '~/components/banner';
 
 export const loader: LoaderFunction = async ({ request }) => {
 	const userKey = await getUser(request);
@@ -48,17 +49,24 @@ export default function Proposals() {
 
 	return (
 		<div className="flex flex-col mx-auto min-h-screen">
-			<nav className="flex items-center justify-between p-10">
-				<div className="flex flex-col">
-					<div className="container flex items-center justify-center space-x-8">
-						<img className="max-h-20" src="/assets/logo-web.png" alt="" />
+			<Banner />
+			<nav className="flex flex-col md:flex-row items-center justify-between p-7">
+				<div className="flex flex-col mb-6 md:mb-0">
+					<div className="container flex items-center justify-center space-x-6 md:space-x-8">
+						<img
+							className="max-h-14 md:max-h-20"
+							src="/assets/logo-web.png"
+							alt=""
+						/>
 						<div
-							className="border-solid border-black border-l-4"
+							className="border-solid border-black border-l-2 md:border-l-4"
 							style={{ height: '4.5rem' }}
 						></div>
 						<div className="flex flex-col items-center min-h-fit">
-							<p className="font-mono text-2xl font-bold">community</p>
-							<p className="font-mono text-5xl font-black tracking-tighter">
+							<p className="font-roboto text-lg md:text-2xl font-bold">
+								community
+							</p>
+							<p className="font-roboto text-4xl md:text-5xl font-bold tracking-tighter">
 								VOTE!
 							</p>
 						</div>
@@ -67,7 +75,7 @@ export default function Proposals() {
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a
 								href="https://telluscoop.com"
-								className="font-mono text-xl font-bold"
+								className="font-roboto text-xl font-bold"
 							>
 								home
 							</a>
@@ -75,7 +83,7 @@ export default function Proposals() {
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a
 								href="https://community.telluscoop.com"
-								className="font-mono text-xl font-bold"
+								className="font-roboto text-xl font-bold"
 							>
 								community
 							</a>
@@ -83,7 +91,7 @@ export default function Proposals() {
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a
 								href="https://docs.telluscoop.com"
-								className="font-mono text-xl font-bold"
+								className="font-roboto text-xl font-bold"
 							>
 								docs
 							</a>
@@ -91,7 +99,7 @@ export default function Proposals() {
 						<div className="transition-all hover:skew-x-3 hover:rotate-3 hover:bg-telluscoopPink hover:text-telluscoopWhite">
 							<a
 								href="https://medium.com/telluscoop"
-								className="font-mono text-xl font-bold"
+								className="font-roboto text-xl font-bold"
 							>
 								blog
 							</a>
@@ -105,11 +113,11 @@ export default function Proposals() {
 							className="flex flex-col items-center mr-10"
 						>
 							<img
-								className="max-w-[4rem]"
+								className="max-w-[3.5rem] md:max-w-[4rem]"
 								src="/assets/user-logo.png"
 								alt=""
 							/>
-							<span className="font-mono text-md mt-2">
+							<span className="font-roboto text-sm md:text-md mt-2">
 								{userKey.slice(0, 4) + '...' + userKey.slice(-4)}
 							</span>
 						</Link>
@@ -120,7 +128,7 @@ export default function Proposals() {
 							{userKey ? (
 								<button
 									type="button"
-									className="relative z-10 px-10 py-2 font-mono text-2xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopGreen tracking-wide hover:bg-telluscoopRed"
+									className="relative z-10 px-8 md:px-10 py-2 font-roboto text-xl md:text-2xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopGreen tracking-wide hover:bg-telluscoopRed"
 									onMouseEnter={disconnectText}
 									onMouseLeave={originalText}
 									onClick={logoutAlbedo}
@@ -130,7 +138,7 @@ export default function Proposals() {
 							) : (
 								<button
 									type="button"
-									className="relative z-10 px-10 py-2 font-mono text-2xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopRed tracking-wide hover:bg-telluscoopGreen"
+									className="relative z-10 px-8 md:px-10 py-2 font-roboto text-xl md:text-2xl border-4 border-black transition-all text-telluscoopWhite bg-telluscoopRed tracking-wide hover:bg-telluscoopGreen"
 									onClick={checkAlbedo}
 								>
 									Connect Wallet

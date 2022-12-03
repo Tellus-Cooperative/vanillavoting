@@ -100,9 +100,9 @@ export default function Proposals() {
 			<Link to="/proposals" className="font-flex text-lg mb-2">
 				Back
 			</Link>
-			<div className="flex items-center justify-between mb-2">
-				<div className="flex items-center mb-3">
-					<h1 className="font-flex text-4xl mr-5">
+			<div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+				<div className="flex flex-col md:flex-row md:items-center mb-3">
+					<h1 className="font-flex text-2xl mb-2 md:mb-0 md:text-4xl md:mr-5">
 						Community Governance Proposal {data.proposal.slice(-3)}
 					</h1>
 					<span className="font-flex text-sm">
@@ -113,7 +113,7 @@ export default function Proposals() {
 						})}
 					</span>
 				</div>
-				<div className="basis-1/3 flex flex-col items-end pl-1">
+				<div className="basis-1/3 flex flex-col md:items-end md:pl-1">
 					<span className="font-mono text-sm italic font-bold">
 						Treasury Quorum
 					</span>
@@ -126,14 +126,14 @@ export default function Proposals() {
 					</div>
 				</div>
 			</div>
-			<div className="flex space-x-2 min-h-[50vh]">
-				<div className="basis-2/3 border-black border-[3px] rounded p-7 bg-neutral-300">
+			<div className="flex flex-col md:flex-row md:space-x-2 md:min-h-[50vh]">
+				<div className="basis-2/3 border-black border-[3px] rounded p-7 bg-neutral-300 mb-2 md:mb-0">
 					<div className="mb-2">
 						<h3 className="font-flex text-base font-bold mb-2">Abstract</h3>
 						<p className="mb-6">{data.abstract}</p>
 						<h3 className="font-flex text-base font-bold mb-2">Body</h3>
 					</div>
-					<div className="max-h-[8rem] overflow-y-scroll">
+					<div className="max-h-[20rem] md:max-h-[8rem] overflow-y-scroll">
 						<p>{data.body}</p>
 					</div>
 				</div>
@@ -160,7 +160,9 @@ export default function Proposals() {
 							</div>
 							<div className="flex-1 flex flex-col items-end justify-center pl-2">
 								<span className="font-mono text-xs italic font-bold">
-									{`${Math.trunc(totalYes.balance)} COOP ${percentageYes}%`}
+									{`${Math.trunc(
+										totalYes.balance
+									)} COOP ${percentageYes.toFixed(1)}%`}
 								</span>
 								<div className="w-full relative h-3 mb-4">
 									<div className="bg-neutral-500 absolute top-0 left-0 h-3 w-full rounded border-2 border-black"></div>
@@ -177,7 +179,7 @@ export default function Proposals() {
 									<span className="absolute inset-0 z-0 bg-black translate-x-0.5 translate-y-0.5 rounded"></span>
 									<button
 										type="button"
-										className="relative z-10 px-[2.15rem] py-0.5 font-mono text-lg border-4 border-black transition-all text-telluscoopWhite bg-telluscoopPink tracking-wide rounded hover:bg-telluscoopGreen"
+										className="relative z-10 px-[1.9rem] py-0.5 font-mono text-lg border-4 border-black transition-all text-telluscoopWhite bg-telluscoopPink tracking-wide rounded hover:bg-telluscoopGreen"
 										onClick={voteNo}
 									>
 										NO
@@ -186,7 +188,9 @@ export default function Proposals() {
 							</div>
 							<div className="flex-1 flex flex-col items-end justify-center pl-2">
 								<span className="font-mono text-xs italic font-bold">
-									{`${Math.trunc(totalNo.balance)} COOP ${percentageNo}%`}
+									{`${Math.trunc(totalNo.balance)} COOP ${percentageNo.toFixed(
+										1
+									)}%`}
 								</span>
 								<div className="w-full relative h-3 mb-4">
 									<div className="bg-neutral-500 absolute top-0 left-0 h-3 w-full rounded border-2 border-black"></div>
