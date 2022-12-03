@@ -44,7 +44,7 @@ export default function Index() {
 				</div>
 			</nav>
 			<section className="my-10">
-				<div className="container flex flex-col md:flex-row items-center justify-center space-x-8">
+				<div className="container flex flex-col md:flex-row items-center justify-center md:space-x-8">
 					<img
 						className="max-w-xs md:max-w-md mb-4 md:mb-0"
 						src="/assets/logo-web.png"
