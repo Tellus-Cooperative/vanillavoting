@@ -31,13 +31,9 @@ export default function Proposals() {
 	const dateStart = new Date(data.startDate);
 	const dateEnd = new Date(data.endDate);
 
-	const totalYes = coopYes.balances.find(
-		(item: any) => item.asset_code === 'COOP'
-	);
+	const totalYes = coopYes.balances;
 
-	const totalNo = coopNo.balances.find(
-		(item: any) => item.asset_code === 'COOP'
-	);
+	const totalNo = coopNo.balances;
 
 	const totalVotes = Math.trunc(totalYes.balance) + Math.trunc(totalNo.balance);
 	const minVotes = data.minVotes;
