@@ -93,41 +93,6 @@ export default function Index() {
 						</button>
 					</div>
 				</Link>
-				<div className="flex flex-col md:flex-row items-center justify-evenly min-w-full">
-					<a href="https://telluscoop.notion.site/telluscoop/Tellus-Cooperative-e18dbf7508694847b69d862a5920d6e8">
-						<div className="inline-block relative mb-5 md:mb-0">
-							<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full md:-mt-24"></span>
-							<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full md:-mt-24 bg-telluscoopBlue">
-								<p className="font-roboto text-xl tracking-wide font-medium">
-									COOP
-								</p>
-								<p className="font-roboto text-xl tracking-wide font-medium">
-									Token
-								</p>
-							</div>
-						</div>
-					</a>
-					<a href="https://telluscoop.notion.site/telluscoop/Tellus-Cooperative-e18dbf7508694847b69d862a5920d6e8">
-						<div className="inline-block relative mb-5 md:mb-0">
-							<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full"></span>
-							<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full bg-telluscoopYellow">
-								<p className="font-roboto text-xl tracking-wide font-medium">
-									Mission
-								</p>
-							</div>
-						</div>
-					</a>
-					<a href="https://telluscoop.notion.site/telluscoop/Tellus-Cooperative-e18dbf7508694847b69d862a5920d6e8">
-						<div className="inline-block relative mb-5 md:mb-0">
-							<span className="absolute inset-0 z-0 bg-black translate-x-1 translate-y-1 rounded-full md:-mt-24"></span>
-							<div className="flex flex-col relative z-10 items-center justify-center w-[160px] h-[160px] border-4 border-black rounded-full md:-mt-24 bg-telluscoopPink">
-								<p className="font-roboto text-xl tracking-wide font-medium">
-									Roadmap
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
 			</section>
 		</div>
 	);
