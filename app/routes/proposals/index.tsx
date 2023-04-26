@@ -41,13 +41,14 @@ export default function ProposalsIndex() {
 
 	const totalNo = coopNo?.balances;
 
-	const totalVotes = Math.trunc(totalYes.balance) + Math.trunc(totalNo.balance);
+	const totalVotes = (totalYes?.balance ?? 0) + (totalNo?.balance ?? 0);
 	const minVotes = data[0].minVotes;
 
 	const percentage = (totalVotes / minVotes) * 100;
 	const percentageStyle = {
 		width: `${percentage}%`,
 	};
+
 
 	return (
 		<div className="flex-1 flex flex-col py-5 px-10">
