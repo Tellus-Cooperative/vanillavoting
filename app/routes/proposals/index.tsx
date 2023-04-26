@@ -37,9 +37,9 @@ export default function ProposalsIndex() {
 		return dayDifference(today, dateEnd);
 	});
 
-	const totalYes = coopYes.balances;
+	const totalYes = coopYes?.balances;
 
-	const totalNo = coopNo.balances;
+	const totalNo = coopNo?.balances;
 
 	const totalVotes = Math.trunc(totalYes.balance) + Math.trunc(totalNo.balance);
 	const minVotes = data[0].minVotes;

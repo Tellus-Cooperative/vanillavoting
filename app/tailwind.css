@@ -602,10 +602,6 @@ video {
   margin-bottom: 3.5rem;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -658,6 +654,10 @@ video {
   margin-bottom: 0px;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -684,10 +684,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[160px\] {
-  height: 160px;
 }
 
 .h-3 {
@@ -721,10 +717,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[160px\] {
-  width: 160px;
 }
 
 .min-w-full {
@@ -858,20 +850,10 @@ video {
   justify-content: space-between;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
 .space-x-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-7 > :not([hidden]) ~ :not([hidden]) {
@@ -890,10 +872,6 @@ video {
 
 .overflow-y-scroll {
   overflow-y: scroll;
-}
-
-.rounded-full {
-  border-radius: 9999px;
 }
 
 .rounded {
@@ -953,21 +931,6 @@ video {
   background-color: rgb(113 198 102 / var(--tw-bg-opacity));
 }
 
-.bg-telluscoopBlue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(90 169 230 / var(--tw-bg-opacity));
-}
-
-.bg-telluscoopYellow {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 228 94 / var(--tw-bg-opacity));
-}
-
-.bg-telluscoopPink {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 99 146 / var(--tw-bg-opacity));
-}
-
 .bg-telluscoopRed {
   --tw-bg-opacity: 1;
   background-color: rgb(221 33 30 / var(--tw-bg-opacity));
@@ -978,9 +941,24 @@ video {
   background-color: rgb(115 115 115 / var(--tw-bg-opacity));
 }
 
+.bg-telluscoopYellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 228 94 / var(--tw-bg-opacity));
+}
+
 .bg-neutral-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(212 212 212 / var(--tw-bg-opacity));
+}
+
+.bg-telluscoopBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(90 169 230 / var(--tw-bg-opacity));
+}
+
+.bg-telluscoopPink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 99 146 / var(--tw-bg-opacity));
 }
 
 .bg-telluscoopLightGreen {
@@ -1168,10 +1146,6 @@ video {
   font-weight: 700;
 }
 
-.font-medium {
-  font-weight: 500;
-}
-
 .italic {
   font-style: italic;
 }
@@ -1260,10 +1234,6 @@ video {
 @media (min-width: 768px) {
   .md\:mb-0 {
     margin-bottom: 0px;
-  }
-
-  .md\:-mt-24 {
-    margin-top: -6rem;
   }
 
   .md\:mr-5 {
