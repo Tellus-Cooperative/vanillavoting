@@ -56,8 +56,6 @@ export default function Proposals() {
 	type TxData = {
 		amount: string;
 		destination: string;
-		asset_code: string;
-		asset_issuer: string;
 		network: string;
 		submit: boolean;
 		memo: string;
@@ -66,9 +64,7 @@ export default function Proposals() {
 	const voteYes = async () => {
 		const txData: TxData = {
 			amount: '100',
-			destination: 'GALB22EZFMEDXZSK7QD4NGFFSRMV434ZSQL2O6KOY7YTYADYYUSJLDWE',
-			asset_code: 'COOP',
-			asset_issuer: 'GBE2GUDSJCZW5GGXDS3V3VQV3SEIN67UR6Z64P2CETVJ2O2CPGBRIVF3',
+			destination: 'GBJ3VN5NAUR2RD2GU3F6KMPV5PECNTELCEFLWYNGVALQAJ7IUID7JTF5',
 			network: 'testnet',
 			submit: true,
 			memo: 'YES',
@@ -80,9 +76,7 @@ export default function Proposals() {
 	const voteNo = async () => {
 		const txData: TxData = {
 			amount: '100',
-			destination: 'GDSXBUMPPPK54KZI2TQ3OY5DLBT6YDUFWR5RZTAZB3CU6PCJNSVPRXQQ',
-			asset_code: 'COOP',
-			asset_issuer: 'GBE2GUDSJCZW5GGXDS3V3VQV3SEIN67UR6Z64P2CETVJ2O2CPGBRIVF3',
+			destination: 'GBVHOGGG3GKRGDFKQHMSLBXGDNJRYUOIMTMWVPKTWSOASTH4MT3VGMEZ',
 			network: 'testnet',
 			submit: true,
 			memo: 'NO',
