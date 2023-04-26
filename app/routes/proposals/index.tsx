@@ -7,11 +7,11 @@ export const loader: LoaderFunction = async ({ request }) => {
 	const data = await prisma.proposals.findMany();
 	const userKey = await getUser(request);
 	const stellarYes = await fetch(
-		'https://horizon-testnet.stellar.org/accounts/GC44DUKQ6VIWFZUJSBQIVFI3IYCCVN3A2J2LPNI2Z3NROZC2JZIXHH7Z'
+		'https://horizon-testnet.stellar.org/accounts/GBJ3VN5NAUR2RD2GU3F6KMPV5PECNTELCEFLWYNGVALQAJ7IUID7JTF5'
 	);
 	const coopYes = await stellarYes.json();
 	const stellarNo = await fetch(
-		'https://horizon-testnet.stellar.org/accounts/GD36SV4BFYX7FRD2SOYI4QIXL6EDLJEHWGHZOB3AUXYTTILVWKPGNNMP'
+		'https://horizon-testnet.stellar.org/accounts/GBVHOGGG3GKRGDFKQHMSLBXGDNJRYUOIMTMWVPKTWSOASTH4MT3VGMEZ'
 	);
 	const coopNo = await stellarNo.json();
 
