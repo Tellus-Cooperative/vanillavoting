@@ -1,3 +1,9 @@
+![Image](https://github.com/Tellus-Cooperative/vanillavoting/blob/main/public/assets/communityvote.png?raw=true)
+# Community Vote (Vanilla Stellar)
+
+A simple voting platform using RemixJS and MongoDB in the Stellar Network.
+
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
